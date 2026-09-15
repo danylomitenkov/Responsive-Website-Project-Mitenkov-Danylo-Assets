@@ -1,0 +1,516 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+body {
+  width: 100%;
+  background-color: #ffffff;
+}
+
+body:has(.burger-input:checked) {
+  overflow: hidden;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+header img {
+  position: relative;
+  z-index: 3;
+}
+
+.waverider-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+.burger-input {
+  display: none;
+}
+
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 15px;
+  height: 2px;
+  background-color: #1e1e1e;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+.burger-input:checked ~ .menu-toggle .bar2 {
+  opacity: 0;
+}
+
+.burger-input:checked ~ .menu-toggle .bar1 {
+  transform: rotate(45deg) translateY(7px);
+}
+
+.burger-input:checked ~ .menu-toggle .bar3 {
+  transform: rotate(-45deg) translateY(-7px);
+}
+
+.menu-links {
+  display: none;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 100%;
+}
+
+.burger-input:checked ~ .menu-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #ffffff;
+  z-index: 1;
+  padding: 8.5rem 1.5rem 3rem 1.5rem;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.menu a {
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  padding: 0.5rem 0;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.menu a:hover {
+  background-color: #f5f5f5;
+}
+
+.hero {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.8) 0 0),
+    url("https://github.com/TIM-APPSTER/Responsive-Website-Project-Mitenkov-Danylo-Assets/blob/main/hero-image.jpg?raw=true");
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 0px 0px 16px 16px;
+  padding: 10rem 1.5rem 10rem 1.5rem;
+  gap: 2rem;
+  font-family: "Inter", sans-serif;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.header-button,
+.hero-button {
+  width: fit-content;
+  height: fit-content;
+  border: none;
+  border-radius: 8px;
+  background-color: #2c2c2c;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #f5f5f5;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.header-button {
+  padding: 0.5rem 1rem;
+}
+
+.hero-button {
+  padding: 0.75rem 1.5rem;
+}
+
+.header-button:hover,
+.hero-button:hover {
+  background-color: #555555;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  background-color: #d1e9f0;
+  padding: 1.5rem;
+  gap: 1.5rem;
+  border-radius: 16px;
+  opacity: 0.8;
+}
+
+.gallery img {
+  border-radius: 16px;
+}
+
+.why-us {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 3rem;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter", sans-serif;
+  gap: 0.5rem;
+}
+
+.heading h3 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #1e1e1e;
+  letter-spacing: -2%;
+  line-height: 120%;
+}
+
+.heading h4 {
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: #757575;
+  line-height: 120%;
+}
+
+.some-comments {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.comment {
+  display: flex;
+  gap: 1.5rem;
+  font-family: "Inter", sans-serif;
+}
+
+.comment h3 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 120%;
+  letter-spacing: -2%;
+  color: #1e1e1e;
+}
+
+.comment p {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 140%;
+  letter-spacing: 0%;
+  color: #757575;
+}
+
+.comment-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.info-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  background-color: #d1e9f0;
+  border-radius: 16px;
+  padding: 1.5rem;
+  font-family: "Inter", sans-serif;
+}
+
+.card-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.review-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  gap: 1.5rem;
+  border-top: 1px solid #e5e5e5;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.review-card h3 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 120%;
+  letter-spacing: -2%;
+  color: #1e1e1e;
+}
+
+.user {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.user-information {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.user-information h4 {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 140%;
+  letter-spacing: 0%;
+  color: #757575;
+}
+
+.user-information p {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 140%;
+  letter-spacing: 0%;
+  color: #b3b3b3;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  border-top: 1px;
+  padding: 1.5rem 2rem 1.5rem 2rem;
+  font-family: "Inter", sans-serif;
+  line-height: 140%;
+}
+
+footer a {
+  text-decoration: none;
+  color: #1e1e1e;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.links > a.about,
+.courses-links a:first-child,
+.shop-links a:first-child {
+  font-weight: 700;
+}
+
+.courses-links a:not(:first-child),
+.shop-links a:not(:first-child) {
+  font-weight: 400;
+}
+
+footer a:hover {
+  color: #757575;
+}
+
+.socials {
+  display: flex;
+  justify-content: space-between;
+}
+
+.social-media-icons {
+  display: flex;
+  gap: 16px;
+}
+
+.social-media-icons img {
+  width: 24px;
+  height: 24px;
+}
+.social-media-icons a:hover {
+  opacity: 0.7;
+}
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.courses-links,
+.shop-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-map {
+  width: 100%;
+  max-width: 21.75rem;
+  height: 14.5625rem;
+  max-height: 16.3125rem;
+  border-radius: 8px;
+}
+
+@media (min-width: 768px) {
+  body:has(.burger-input:checked) {
+    overflow: visible;
+  }
+
+  .waverider-logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .burger-input:checked ~ .menu-links,
+  .menu-links {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    height: auto;
+    padding: 0;
+    background-color: transparent;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .menu {
+    flex-direction: row;
+    width: auto;
+    gap: 0.5rem;
+  }
+
+  .menu a {
+    width: auto;
+    padding: 0.5rem;
+  }
+
+  .hero {
+    border-radius: 16px;
+  }
+
+  .hero h1 {
+    font-size: 4.5rem;
+  }
+
+  .gallery {
+    flex-direction: row;
+    border-radius: 2rem;
+    padding: 4rem;
+    gap: 3rem;
+  }
+
+  .gallery img {
+    max-width: 100%;
+    height: auto;
+    flex: 1 1 0px;
+    min-width: 0;
+    object-fit: cover;
+  }
+
+  .why-us {
+    padding: 4rem;
+    gap: 3rem;
+  }
+
+  .some-comments {
+    flex-direction: row;
+    gap: 4rem;
+  }
+
+  .reviews {
+    padding: 4rem;
+    gap: 3rem;
+    border-radius: 2rem;
+  }
+
+  .card-grid {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .review-card {
+    min-width: 20rem;
+    flex: 1;
+  }
+
+  footer {
+    flex-direction: row;
+    padding: 2rem;
+    gap: 1rem;
+    justify-content: space-between;
+  }
+
+  .socials {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1.5rem;
+  }
+
+  .socials img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .social-media-icons img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .links {
+    flex-direction: row;
+    gap: 4rem;
+  }
+}
